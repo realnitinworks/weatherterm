@@ -60,17 +60,29 @@ argparser.add_argument(
     help='Show the weather forecast for the current day.'
 )
 
-argparser.add_argument('-5d', '--fivedays',
-                       dest='forecast_option',
-                       action='store_const',
-                       const=ForecastType.FIVEDAYS,
-                       help='Shows the weather forecast for the next 5 days.')
+argparser.add_argument(
+    '-5d', '--fivedays',
+    dest='forecast_option',
+    action='store_const',
+    const=ForecastType.FIVEDAYS,
+    help='Shows the weather forecast for the next 5 days.'
+)
 
-argparser.add_argument('-10d', '--tendays',
-                       dest='forecast_option',
-                       action='store_const',
-                       const=ForecastType.TENDAYS,
-                       help='Shows the weather forecast for the next 10 days')
+argparser.add_argument(
+    '-10d', '--tendays',
+    dest='forecast_option',
+    action='store_const',
+    const=ForecastType.TENDAYS,
+    help='Shows the weather forecast for the next 10 days.'
+)
+
+argparser.add_argument(
+    '-w', '--weekend',
+    dest='forecast_option',
+    action='store_const',
+    const=ForecastType.WEEKEND,
+    help="Shows the weather forecast for the weekend."
+)
 
 args = argparser.parse_args()
 
